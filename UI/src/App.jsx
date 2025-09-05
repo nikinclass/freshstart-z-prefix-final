@@ -13,7 +13,7 @@ function App() {
   const [item, setItem] = useState(null);  
 
   useEffect(() => {
-    fetch('http://localhost:8000/')
+    fetch('http://localhost:8000/user')
     .then(response => {
       if (response.status !=200) {
         throw new Error ('unable to fetch equipment information from resource')

@@ -1,5 +1,7 @@
 import { useContext } from 'react';
-import Account from './Account';
+import Account from './Account.jsx';
+import User from './User.jsx';
+import Item from './Item.jsx';
 import './styles/Home.css';
 import AppContext from './AppContext';
 
@@ -10,6 +12,8 @@ export default function Home () {
   return (
     <div className='Home'>
       <Account/>
+      <User/>
+      <Item/>
       <div className='userList'>
       <button type="submit" value='user'>
         Users

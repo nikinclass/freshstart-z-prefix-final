@@ -1,22 +1,35 @@
-import { useState, useEffect, useContext } from 'react';
-// import { Link } from 'react-router-dom';
-import App from './App.jsx';
-import Home from './Home.jsx';
+import { useState, useContext } from 'react';
 import './styles/Home.css';
 import AppContext from './AppContext';
 
 export default function User () {
-  const [viewUser, setViewUser] = useState('default');
-  const{user, userList, setUserList} = useContext(AppContext);
+  const{ userList, setUserList } = useContext(AppContext);
 
+  const fetchUsers = async () => {
+    const res = await fetch('http://localhost:8000/user');
+    const data = await res.json();
+    setUserList(data);
+  };
+  
   return (
     <div className='userList'>
+      <button type="button" onClick={fetchUsers}>
+        All Users
+      </button>
+      <br />
       <ul>
-        {user.map(user => (
-          <><li key={user.id}>{user.id}</li><li key={user.username}>{user.username}</li><li key={user.firstname}>{user.firstname}</li><li key={user.lastname}>{user.lastname}</li></>
-        ))}
+          {userList.map(u => (
+            <>
+            <li key={u.id}>
+              id: {u.id},
+              username: {u.username}, 
+              firstname: {u.firstname},
+              lastname: {u.lastname}, 
+              password: {u.password}
+            </li>
+            </>
+          ))}
       </ul>
-      { userList ? 'userList' : 'no users to show'};
     </div>
-    );
-};
+  );
+}
