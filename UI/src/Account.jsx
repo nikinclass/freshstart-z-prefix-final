@@ -90,7 +90,7 @@ export default function Account() {
           Cancel
         </button>
       </div>
-      <p>
+      {/* <p>
         Returning user? { " "}
         <a 
           onClick={() => {
@@ -99,7 +99,7 @@ export default function Account() {
         >
           login
         </a>
-      </p>
+      </p> */}
       </form>
     );
   }
@@ -111,7 +111,7 @@ export default function Account() {
       handleSubmit(e);
     }}
     >
-    <h2>User Login</h2>
+    {/* <h2>User Login</h2>
     <label htmlFor="username">
       UserName{" "}
       {validCredentials ? "" : <span>Invalid email/password</span>}
@@ -140,7 +140,7 @@ export default function Account() {
       >
         Cancel
       </button>
-    </div>
+    </div> */}
       <p>
         New user? {" "}
         <a
@@ -154,3 +154,4 @@ export default function Account() {
     </form>
   );
 }
+

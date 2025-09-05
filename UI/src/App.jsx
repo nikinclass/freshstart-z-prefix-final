@@ -22,7 +22,7 @@ function App() {
       }
     })
     .then(data => setEquipmentList(data))
-    .catch(err => console.log(err));
+    .catch(err => console.log(err))
   }, [])
   return (
     // response.json()

@@ -10,7 +10,19 @@ export default function Home () {
   return (
     <div className='Home'>
       <Account/>
-    </div>    
+      <div className='userList'>
+      <button type="submit" value='user'>
+        Users
+      </button>
+      <br />
+      </div>
+      <div className='itemList'>
+        <button type="submit" value="item">
+          Item
+        </button>
+        <br />
+      </div>    
+    </div>
   )
 };
 
